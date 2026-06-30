@@ -110,7 +110,8 @@ const fetchProducts = async () => {
     products.value = rawData.map(item => {
       const fields = item.attributes ? item.attributes : item
       const imgData = fields.image?.data?.attributes || fields.image
-      const imageUrl = imgData?.url ? `${STRAPI_BASE_URL}${imgData.url}` : 'https://via.placeholder.com/400x500'
+      const imageUrl = imgData?.url ? `${imgData.url}` : 'https://via.placeholder.com/400x500'
+      // const imageUrl = imgData?.url ? `${STRAPI_BASE_URL}${imgData.url}` : 'https://via.placeholder.com/400x500'
       console.log(item.documentId);
       
       return {
