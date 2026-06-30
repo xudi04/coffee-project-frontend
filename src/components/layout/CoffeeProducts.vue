@@ -78,6 +78,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
 
 const isLoading = ref(false)
 // --- REAKTİF STATE TANIMLARI ---
@@ -96,7 +97,7 @@ const selectedGrinds = ref({
 
 const products = ref([])
 
-const STRAPI_BASE_URL = 'http://localhost:1337'
+const STRAPI_BASE_URL = API_URL
 
 const fetchProducts = async () => {
   try {

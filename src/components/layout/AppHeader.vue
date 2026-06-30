@@ -163,6 +163,7 @@
 </template>
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
 
 /// adres popup
 // ⚡ [YAMA] Popup kontrol değişkeni
@@ -302,7 +303,7 @@ const handleCheckout = async () => {
     }
 
     // 2. Strapi Backend ucumuza sepet verisini POST ediyoruz
-    const response = await fetch('http://localhost:1337/api/orders', {
+    const response = await fetch(`${API_URL}/api/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
