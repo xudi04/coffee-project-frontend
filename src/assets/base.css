@@ -1,0 +1,71 @@
+/* src/assets/style.css */
+
+/* Renk Paleti ve Marka Kimliği */
+:root {
+  --bg-antrasit: #1E1F22;
+  --bg-espresso: #2C221E;
+  --bg-cream: #FBF9F6;
+  --color-gold: #DFB76C;
+  --text-dark: #2B2B2B;
+  
+  /* Tipografi Standartları */
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Inter', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Geçiş Efektleri */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg-antrasit); /* Varsayılan koyu tema başlangıcı */
+  color: var(--bg-cream);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Başlıklar İçin Serif Font Güvencesi */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+/* Buton ve Link Resetleri */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Ortak Alan Konteyneri (Pixel-Perfect Hizalama İçin) */
+.container {
+  width: 100%;
+  max-width: 1440px; /* Standart Figma web canvas genişliği */
+  margin: 0 auto;
+  padding: 0 80px; /* Kenar güvenli alanı (Desktop) */
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
