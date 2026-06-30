@@ -135,7 +135,7 @@ const closeModal = () => {
 // --- STATİK ŞUBE VERİ MODELİ ---
 const branches = ref([])
 
-const STRAPI_BASE_URL = 'http://localhost:1337'
+const STRAPI_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337'
 
 const fetchBranches = async () => {
   try {
