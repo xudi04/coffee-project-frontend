@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const isLoading = ref(false)
 // --- REAKTİF STATE TANIMLARI ---
