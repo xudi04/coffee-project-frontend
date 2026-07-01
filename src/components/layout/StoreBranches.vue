@@ -135,7 +135,7 @@ const closeModal = () => {
 // --- STATİK ŞUBE VERİ MODELİ ---
 const branches = ref([])
 
-const STRAPI_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
+const STRAPI_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337'
 
 const fetchBranches = async () => {
   try {
@@ -151,7 +151,7 @@ const fetchBranches = async () => {
       
       // Panelden yeni eklediğin image elementinin derin düğüm kontrolü ve URL birleştirmesi
       const imgData = fields.image?.data?.attributes || fields.image
-      const imageUrl = imgData?.url ? `${STRAPI_BASE_URL}${imgData.url}` : 'https://via.placeholder.com/600x400?text=Tariks+Coffee+Branch'
+      const imageUrl = imgData?.url ? imgData.url : 'https://via.placeholder.com/600x400?text=Tariks+Coffee+Branch'
 
       return {
         id: item.id,

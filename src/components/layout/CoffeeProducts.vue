@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const isLoading = ref(false)
 // --- REAKTİF STATE TANIMLARI ---
@@ -110,7 +110,7 @@ const fetchProducts = async () => {
     products.value = rawData.map(item => {
       const fields = item.attributes ? item.attributes : item
       const imgData = fields.image?.data?.attributes || fields.image
-      const imageUrl = imgData?.url ? `${imgData.url}` : 'https://via.placeholder.com/400x500'
+      const imageUrl = imgData?.url ? imgData.url : 'https://via.placeholder.com/400x500'
       // const imageUrl = imgData?.url ? `${STRAPI_BASE_URL}${imgData.url}` : 'https://via.placeholder.com/400x500'
       console.log(item.documentId);
       
